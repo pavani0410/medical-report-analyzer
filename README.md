@@ -1,6 +1,8 @@
 # Medical Report Analyzer
 
 An AI-powered web application for intelligent analysis and conversational querying of medical reports. This project uses a hybrid AI architecture to transform complex, unstructured medical PDF data into clear, concise, and actionable insights.
+![Uploading image.png…]()
+
 
 ## Project Overview
 The Medical Report Analyzer is a full-stack application designed to assist in the preliminary assessment of medical reports. It allows users to upload a PDF file and ask questions, receiving detailed and context-aware answers.

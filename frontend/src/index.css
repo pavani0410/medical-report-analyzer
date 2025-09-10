@@ -1,0 +1,63 @@
+    /*
+      This file now contains only custom CSS that is NOT covered by Tailwind utility classes.
+      Tailwind itself is loaded via CDN in index.html for immediate availability.
+    */
+
+    /* Custom Grid Pattern */
+    .bg-grid-white\/\[0\.02\] {
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+
+    /* Animated background elements */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.2; }
+      50% { transform: scale(1.05); opacity: 0.3; }
+    }
+    .animate-pulse-custom {
+        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .animate-pulse-custom-delay-500 {
+        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite 0.5s;
+    }
+    .animate-pulse-custom-delay-1000 {
+        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite 1s;
+    }
+
+    /* Enhanced Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px; /* Wider for better visibility */
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #06b6d4, #10b981); /* Cyan to Emerald gradient */
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #0891b2, #059669);
+    }
+
+    /* Custom file input styling */
+    input[type="file"]::file-selector-button {
+        margin-right: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px; /* full rounded */
+        border: 0;
+        font-size: 0.875rem; /* text-sm */
+        font-weight: 600; /* font-semibold */
+        background-color: #4c51bf; /* indigo-500 */
+        color: #ffffff; /* text-white */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    input[type="file"]::file-selector-button:hover {
+        background-color: #434190; /* indigo-600 */
+    }
+    

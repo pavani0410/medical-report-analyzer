@@ -1,8 +1,6 @@
-# Medical Report Analyzer
+ Medical Report Analyzer
 
 An AI-powered web application for intelligent analysis and conversational querying of medical reports. This project uses a hybrid AI architecture to transform complex, unstructured medical PDF data into clear, concise, and actionable insights.
-<img width="1321" height="801" alt="image" src="https://github.com/user-attachments/assets/21df7b3e-4e95-49d0-a141-cc03c1329477" />
-
 
 ## Project Overview
 The Medical Report Analyzer is a full-stack application designed to assist in the preliminary assessment of medical reports. It allows users to upload a PDF file and ask questions, receiving detailed and context-aware answers.
@@ -35,3 +33,74 @@ The system's core functionality is powered by a custom-trained local Large Langu
 - Lucide React: Icon library for visual elements.  
 
 ## Project Structure
+.
+├── app.py # Flask backend and API endpoints
+├── train.py # Script for fine-tuning the LLM with LoRA
+├── requirements.txt # Python dependencies
+├── frontend/
+│ ├── public/
+│ ├── src/
+│ │ ├── App.jsx # Main React component with UI and logic
+│ │ ├── main.jsx # React entry point
+│ │ └── index.css # Global and custom CSS (with Tailwind directives)
+│ ├── tailwind.config.js # Tailwind CSS configuration
+│ ├── postcss.config.js # PostCSS configuration for Tailwind
+│ └── vite.config.js # Vite build configuration
+├── models/
+│ ├── medical_llm_merged_final/ # The base LLM with fine-tuned weights
+│ └── adapter_after_extra_training/ # LoRA adapter from training
+└── data/
+└── medical_qa.jsonl # Fine-tuning dataset
+
+markdown
+Copy code
+
+## Installation and Setup
+### Prerequisites
+- Python 3.8+  
+- Node.js & npm (LTS recommended)  
+- Git  
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/Medical-Report-Analyzer.git
+   cd Medical-Report-Analyzer
+Create and configure environment variables:
+Create a .env file in the project root:
+
+bash
+Copy code
+GEMINI_API_KEY="your_api_key_here"
+Important: Never commit your .env file. Add .env to .gitignore.
+
+Set up the Python backend:
+
+bash
+Copy code
+python -m venv venv
+.\venv\Scripts\activate      # On Windows
+pip install -r requirements.txt
+Set up the React frontend:
+
+bash
+Copy code
+cd frontend
+npm install
+npm run build
+Run the application:
+
+bash
+Copy code
+cd ..
+python app.py
+Open your browser and visit:
+
+cpp
+Copy code
+http://127.0.0.1:5000
+Disclaimer
+This application is for educational and demonstrative purposes only. It is not a substitute for professional medical advice. Always consult a qualified healthcare professional for any health concerns.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
